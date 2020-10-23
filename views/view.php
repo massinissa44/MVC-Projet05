@@ -7,14 +7,14 @@
         protected $templatesDir = __DIR__.'/templates/';
         protected $partialsDir = __DIR__.'/partials/';
 
-        function __construct($templateName, $partialName) {
+        function __construct($partialName, $templateName = 'default') {
             $this->templateName = $templateName;
             $this->partialName = $partialName;
         }
 
         public function render($data) {
             $this->data = $data;
-            require_once $this->getTemplatePath();
+            include $this->getTemplatePath();
         }
 
         public function getTemplatePath() {

@@ -4,15 +4,22 @@
     abstract class BaseController {
         protected $templateName = 'default';
         protected $partialName = 'default';
-        protected $data = null;
+        // TODO remove me
+        protected $data;
+        protected $router;
 
-        public function init() {
-            $this->render();
+        __construct($router) {
+          $this->router = $router;
         }
 
-        protected function render() {
-            $view = new View($this->templateName, $this->partialName);
-            $view->render($this->data);
+        public function run() {
+          $this->render();
+        }
+
+        // TODO remove me
+        public function render() {
+          $view = new View($this->templateName, $this->partialName);
+          $view->render($this->data);
         }
     }
 ?>
