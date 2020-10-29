@@ -1,46 +1,65 @@
 <?php
-class Router {
-    private $routes = [
-        'home' => 'HomeController',
-        'contact' => 'ContactController',
-        'project' => 'ProjectController',
-        'not-found' => 'NotFoundController'
-    ];
-    private $controllersDir = __DIR__.'/controllers/';
-    private $viewsDir = __DIR__.'/views/';
+    class Router {
+        /**
+         * $routes is of type [$key => $value] where $key is a page name and $value is the name of the controller associated to this $key
+         */
+        private $routes = [
+            'home' => 'HomeController',
+            'contact' => 'ContactController',
+            'project' => 'ProjectController',
+            'not-found' => 'NotFoundController'
+        ];
 
-    public function run() {
-        require_once $this->controllersDir.'base.controller.php';
-        $route = $this->getRouteName();
-        $this->loadController($route);
-    }
-
-    public redirectToPage($page) {
-      $route = array_key_exists($page, $this->routes) ? $page : 'not-found';
-      header("Location: index.php?page={$route}");
-      exit();
-    }
-
-    private function getRouteName() {
-        if (!isset($_GET['page']) || empty($_GET['page'])) {
-            $route = 'home';
-        }
-        elseif (!array_key_exists($_GET['page'], $this->routes)) {
-            $route = 'not-found';
-        }
-        else {
-            $route = $_GET['page'];
+        function __construct() {
+            require_once VIEWS_DIR.'/view.php';
+            require_once CONTROLLERS_DIR.'/base.controller.php';
         }
 
-        return $route;
-    }
+        public function run() {
+            $route = $this->getPageName();
+            $this->loadController($route);
+        }
 
-    private function loadController($route) {
-        require_once $this->controllersDir.$route.'.controller.php';
+        public function redirectToPage($page) {
+            $route = $this.getRouteName($page);
+            header("Location: index.php?page={$route}");
+            exit();
+        }
 
-        $controllerName = $this->routes[$route];
-        $controller = new $controllerName($this);
-        $controller->run();
+        private function getPageName() {
+            if (!isset($_GET['page']) || empty($_GET['page'])) {
+                $route = 'home';
+            }
+            else {
+                $route = $this.getRouteName($_Get['page']);
+            }
+
+            return $route;
+        }
+
+        private function getRouteName($page) {
+            /**
+             * Ternary operator version
+             * return array_key_exists($page, $this->routes)
+             *     ? $page
+             *     : 'not-found';
+             */
+
+            if (array_key_exists($page, $this->routes)) {
+                $route = $page;
+            }
+            else {
+                $route = 'not-found';
+            }
+
+            return $route;
+        }
+
+        private function loadController($route) {
+            require_once CONTROLLERS_DIR."/{$route}.controller.php";
+            $controllerName = $this->routes[$route];
+            $controller = new $controllerName($this);
+            $controller->run();
+        }
     }
-}
 ?>

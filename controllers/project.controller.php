@@ -4,7 +4,7 @@
   class ProjectController extends BaseController {
     public function run() {
       if (!isset($_GET['id']) || empty($_GET['id'])) {
-        $this->router->redirectToPage('not-found')
+        $this->router->redirectToPage('not-found');
       }
 
       $id = $_GET['id'];

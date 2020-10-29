@@ -1,6 +1,6 @@
 <?php
   abstract class BaseModel {
-    protected $pdo;
+    protected static $pdo;
     protected $host = 'test';
     protected $dbName = 'test';
     protected $user = 'test';
@@ -14,14 +14,14 @@
       }
     }
 
-    __construct() {
-      if (is_null($this->pdo)) {
-        $this->pdo = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->user, $this->password);
+    function __construct() {
+      if (is_null(self::$pdo)) {
+        self::$pdo = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->user, $this->password);
       }
     }
 
     public function getById($id) {
-      $stmt = $this->$pdo->prepare("SELECT * FROM $this->entityName WHERE id=?");
+      $stmt = self::$pdo->prepare("SELECT * FROM {$this->entityName} WHERE id=?");
       $stmt->execute(['id' => $id]);
       $this->data = $stmt->fetch();
     }
