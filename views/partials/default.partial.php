@@ -1,5 +1,5 @@
 <p>
 <?php
-    var_dump($this);
+    var_dump($this->data);
 ?>
 </p>

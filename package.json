@@ -1,0 +1,15 @@
+{
+  "name": "portfolio_architecte_bootstrap",
+  "version": "1.0.0",
+  "description": "un projet pour un architecte via bootstrap",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "save": "^2.4.0"
+  }
+}

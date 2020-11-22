@@ -1,6 +1,5 @@
 <?php
     abstract class BaseController {
-        protected $templateName = 'default';
         protected $partialName = 'default';
         // TODO remove me
         protected $data;
@@ -16,7 +15,7 @@
 
       // TODO remove me
       public function render() {
-        $view = new View($this->templateName, $this->partialName);
+        $view = new View($this->partialName);
         $view->render($this->data);
       }
     }

@@ -21,7 +21,7 @@
         }
 
         public function redirectToPage($page) {
-            $route = $this.getRouteName($page);
+            $route = $this->getRouteName($page);
             header("Location: index.php?page={$route}");
             exit();
         }
@@ -31,7 +31,7 @@
                 $route = 'home';
             }
             else {
-                $route = $this.getRouteName($_Get['page']);
+                $route = $this->getRouteName($_GET['page']);
             }
 
             return $route;
