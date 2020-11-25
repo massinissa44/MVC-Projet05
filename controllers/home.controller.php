@@ -1,5 +1,5 @@
 <?php
-    class HomeController extends BaseController {
-
-    }
+  class HomeController extends BaseController {
+    protected $partialName = 'home';
+  }
 ?>

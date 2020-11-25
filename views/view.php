@@ -7,7 +7,7 @@
         protected $templatesDir = __DIR__.'/templates/';
         protected $partialsDir = __DIR__.'/partials/';
 
-        function __construct($partialName, $templateName = 'default') {
+        function __construct($partialName, $templateName) {
             $this->templateName = $templateName;
             $this->partialName = $partialName;
         }

@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'isocpeur';
-  src: url('/fonts/isocpeur.ttf');
+  src: url('fonts/isocpeur.ttf');
 }
 
 @-webkit-keyframes animationLogin { /* Safari, Opera, Chrome */

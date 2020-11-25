@@ -6,7 +6,9 @@
         private $routes = [
             'home' => 'HomeController',
             'contact' => 'ContactController',
+            'about' => 'AboutController',
             'project' => 'ProjectController',
+            'login' => 'LoginController',
             'not-found' => 'NotFoundController'
         ];
 

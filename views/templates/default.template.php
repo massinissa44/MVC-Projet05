@@ -13,15 +13,15 @@
         <div class="menu-icon">
           <i class="fa fa-bars fa-2x"></i>
         </div>
-        <dlv class="logo">
+        <div class="logo">
           <img class="img_logo" src="assets/images/logo.png"/>
-        </dlv>
+        </div>
         <div class="menu">
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="/index.php?page=home">Home</a></li>
+            <li><a href="/index.php?page=about">About</a></li>
+            <li><a href="/index.php?page=project">Projects</a></li>
+            <li><a href="/index.php?page=contact">Contact</a></li>
             <li><a href="#"><i class="fas fa-sign-in-alt fa-1x"></i></a></li>
           </ul>
         </div>
