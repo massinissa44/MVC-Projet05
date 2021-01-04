@@ -1,10 +1,10 @@
 <?php
   abstract class BaseModel {
     protected static $pdo;
-    protected $host = 'test';
-    protected $dbName = 'test';
-    protected $user = 'test';
-    protected $password = 'test';
+    protected $host = 'localhost';
+    protected $dbName = 'architect_project';
+    protected $user = 'root';
+    protected $password = '';
     protected $entityName;
     protected $data = array();
 
@@ -21,7 +21,7 @@
     }
 
     public function getById($id) {
-      $stmt = self::$pdo->prepare("SELECT * FROM {$this->entityName} WHERE id=?");
+      $stmt = self::$pdo->prepare("SELECT * FROM {$this->entityName} WHERE id=:id");
       $stmt->execute(['id' => $id]);
       $this->data = $stmt->fetch();
     }

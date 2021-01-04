@@ -1,7 +1,6 @@
 <div class="container-fluid about-container">
-  <div class="row">
+  <div class="row block-about">
     <div class="image-about col-md-5">
-      <h2 class="title-about">About Me</h2>
       <img class="image-abt" src="assets/images/about.jpg">
     </div>
     <div class="col-md-7">

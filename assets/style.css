@@ -63,6 +63,7 @@ nav {
   position: fixed;
   width: 100%;
   line-height: 60px;
+  z-index: 1;
 }
 
 .black{
@@ -130,7 +131,8 @@ nav.black ul li a:hover {
 /*contactForm*/
 .block {
   padding: 0;
-  margin-top: 25px;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 .contact-form{
@@ -485,20 +487,15 @@ h1{
   padding: 0;
 }
 
+.block-about{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 .image-abt{
   width: 100%;
   position: sticky;
   top: 0;
-}
-
-.title-about{
-  color: #222121;
-  position: absolute;
-  position: fixed;
-  font-size: 46px;
-  font-weight: bold;
-  margin: 20px 0 0 15px;
-  z-index: 1;
 }
 
 .space{
