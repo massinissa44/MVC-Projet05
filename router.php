@@ -9,7 +9,8 @@
             'about' => 'AboutController',
             'project' => 'ProjectController',
             'login' => 'LoginController',
-            'not-found' => 'NotFoundController'
+            'not-found' => 'NotFoundController',
+            'send-message' => 'SendMessageController'
         ];
 
         function __construct() {
